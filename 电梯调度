@@ -1,0 +1,18 @@
+//如果上班坐电梯就会深刻的感受，在繁忙的上下班时间，电梯在每一层楼都停都会让人不胜其烦。如果每次电磁往上走的时候，
+//只允许电梯在某一层楼停。所有的乘客乘坐电梯，电梯停的时候，所有乘客下电梯，然后走到自己所在楼层
+int nPerson[];
+int nFloor,nMinFloor,nTargetFloor;
+nTargetFloor=-1;
+for(i = q;i<=N;i++)
+{
+  nFloor=0;
+  for(j=1;j<i;j++)
+    nFloor+=nPerson[j]*(i-j);
+  for(j=i+1;j<=N;j++)
+    nFloor+=nPerson[j]*(i-j);
+  if(nTargetFloor==-1|| nMinFloor>nFloor)
+  {
+    nMinFloor=nFloor;
+    nTargetFloor=i;
+  }
+}
